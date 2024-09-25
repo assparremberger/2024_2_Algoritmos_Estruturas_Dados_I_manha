@@ -3,12 +3,32 @@ from PyQt5.QtWidgets import QApplication
 from TelaProduto import TelaProduto
 from TelaPerecivel import TelaPerecivel
 
+from Cidade import Cidade
+from FormCidade import FormCidade
+
+from Pessoa import Pessoa
+from FormCliente import FormCliente
+
+cidades = []
+clientes = []
+
 app = QApplication( sys.argv )
 
-telaProduto = TelaProduto()
-telaProduto.show()
+telaCid = FormCidade( listaCidades=cidades)
+telaCid.show()
 
-telaPerecivel = TelaPerecivel()
-telaPerecivel.show()
+telaCli = FormCliente(  listaClientes=clientes, listaCidades=cidades)
+telaCli.show()
 
 sys.exit( app.exec_() )
+
+
+
+
+
+
+#telaProduto = TelaProduto()
+#telaProduto.show()
+
+#telaPerecivel = TelaPerecivel()
+#telaPerecivel.show()
