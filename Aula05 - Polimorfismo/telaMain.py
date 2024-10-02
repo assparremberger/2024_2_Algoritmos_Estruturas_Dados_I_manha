@@ -9,16 +9,21 @@ from FormCidade import FormCidade
 from Pessoa import Pessoa
 from FormCliente import FormCliente
 
+from ListaClientes import ListaClientes
+
 cidades = []
 clientes = []
 
 app = QApplication( sys.argv )
 
 telaCid = FormCidade( listaCidades=cidades)
-telaCid.show()
+#telaCid.show()
 
-telaCli = FormCliente(  listaClientes=clientes, listaCidades=cidades)
-telaCli.show()
+telaCli = FormCliente(  listaClientes=clientes, listaCidades=cidades, telaCidade=telaCid)
+#telaCli.show()
+
+telaListaClientes = ListaClientes( clientes , telaCli)
+telaListaClientes.show()
 
 sys.exit( app.exec_() )
 
